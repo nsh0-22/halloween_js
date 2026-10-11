@@ -1,8 +1,14 @@
+body {
+    background-color: rgb(116, 24, 161);
+}
+
 .top-title {
     width: 50%;
     margin: 0 auto;
     text-align: center;
     margin-top: 40px;
+    color: aliceblue;
+    font-size: 18px;
 }
 
 .test-image {
@@ -20,12 +26,16 @@
     width: 50%;
     margin: 0 auto;
     text-align: center;
+    font-size: 24px;
+    color: aliceblue;
 }
 
 .content {
     width: 50%;
     margin: 0 auto;
     text-align: center;
+    font-size: 16px;
+    color: aliceblue;
 }
 
 .start-button {
@@ -33,4 +43,43 @@
     margin: 0 auto;
     text-align: center;
     margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.start-button button {
+    font-size: 32px;
+    font-family: "Hiragino Maru Gothic ProN", sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: orange;
+    color: aliceblue;
+}
+
+.start-button button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .top-title h1 {
+        font-size: 20px;
+    }
+    
+    .test-image {
+        width: 50%;
+    }
+    
+    .introduction h2 {
+        font-size: 16px;
+    }
+    .content p {
+        font-size: 12px;
+    }
+    .start-button {
+        width: 90%;
+    }
+
+    .start-button button {
+        font-size: 16px;
+    }
 }
