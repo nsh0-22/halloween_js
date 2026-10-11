@@ -1,0 +1,36 @@
+.top-title {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.test-image {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.test-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.introduction {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.start-button {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
