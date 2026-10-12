@@ -60,6 +60,24 @@ body {
     transform: scale(0.95);
 }
 
+#answer-container button {
+    width: 100%;
+    padding: 16px;
+    text-align: left;
+    line-height: 1.6;
+    box-sizing: border-box;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#answer-container button:hover {
+    background-color: #fff3e0;
+}
+
+
 @media (max-width: 600px) {
     .top-title h1 {
         font-size: 20px;
