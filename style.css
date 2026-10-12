@@ -46,7 +46,7 @@ body {
     margin-top: 40px;
 }
 
-.start-button button {
+.start-button a {
     font-size: 32px;
     font-family: "Hiragino Maru Gothic ProN", sans-serif;
     font-weight: bold;
@@ -56,8 +56,15 @@ body {
     color: aliceblue;
 }
 
-.start-button button:active {
-    transform: scale(0.95);
+.start-button a:hover {
+    background-color: #ff7518;
+    box-shadow: 0 3px 0 #663399;
+    transform: translateY(2px);
+}
+
+.start-button a:active {
+    box-shadow: 0 0 0 #663399;
+    transform: translateY(5px);
 }
 
 #answer-container button {
@@ -75,6 +82,44 @@ body {
 
 #answer-container button:hover {
     background-color: #fff3e0;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.navigation-buttons button {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#prev-button {
+    background-color: white;
+    color: #663399;
+    border: 2px solid #663399;
+    box-shadow: 0 4px 0 #663399;
+}
+
+#next-button {
+    background-color: orange;
+    color: white;
+    border: 2px solid #663399;
+    box-shadow: 0 4px 0 #663399;
+}
+
+#next-button:active {
+    box-shadow: 0 0 0 #663399;
+    transform: translateY(4px);
+}
+
+#prev-button:active {
+    box-shadow: 0 0 0 #663399;
+    transform: translateY(4px);
 }
 
 
