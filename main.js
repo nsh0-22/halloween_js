@@ -110,6 +110,18 @@ function changeQuestion() {
   
     const answerElementC = document.getElementById('answer-c');
     answerElementC.textContent = currentQuestion.answers[2];
+
+    if (currentQuestionIndex === 0) {
+        prevButton.style.visibility = 'hidden';
+    } else {
+        prevButton.style.visibility = 'visible';
+    }
+
+    if (currentQuestionIndex === questions.length - 1) {
+        nextButton.style.visibility = 'hidden';
+    } else {
+        nextButton.style.visibility = 'visible';
+    }
 }
 
 const nextButton = document.getElementById('next-button');
