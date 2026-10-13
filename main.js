@@ -112,4 +112,21 @@ function changeQuestion() {
     answerElementC.textContent = currentQuestion.answers[2];
 }
 
+const nextButton = document.getElementById('next-button');
+const prevButton = document.getElementById('prev-button');
+
 changeQuestion();
+
+nextButton.addEventListener('click', function() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        changeQuestion();
+    }
+});
+
+prevButton.addEventListener('click', function() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        changeQuestion();
+    }
+});
