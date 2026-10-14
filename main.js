@@ -102,13 +102,10 @@ function changeQuestion() {
     const titleElement = document.getElementById('question-title');
     titleElement.textContent = currentQuestion.title;
 
-    const answerElementA = document.getElementById('answer-a');
     answerElementA.textContent = currentQuestion.answers[0];
 
-    const answerElementB = document.getElementById('answer-b');
     answerElementB.textContent = currentQuestion.answers[1];
   
-    const answerElementC = document.getElementById('answer-c');
     answerElementC.textContent = currentQuestion.answers[2];
 
     if (currentQuestionIndex === 0) {
@@ -123,6 +120,10 @@ function changeQuestion() {
         nextButton.style.visibility = 'visible';
     }
 }
+
+const answerElementA = document.getElementById('answer-a');
+const answerElementB = document.getElementById('answer-b');
+const answerElementC = document.getElementById('answer-c');
 
 const nextButton = document.getElementById('next-button');
 const prevButton = document.getElementById('prev-button');
@@ -141,4 +142,16 @@ prevButton.addEventListener('click', function() {
         currentQuestionIndex--;
         changeQuestion();
     }
+});
+
+answerElementA.addEventListener('click', function() {
+    answerElementA.classList.add('selected');
+});
+
+answerElementB.addEventListener('click', function() {
+    answerElementB.classList.add('selected');
+});
+
+answerElementC.addEventListener('click', function() {
+    answerElementC.classList.add('selected');
 });

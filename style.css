@@ -67,6 +67,14 @@ body {
     transform: translateY(5px);
 }
 
+.selected {
+    background-color: #ffcc80;
+}
+
+#answer-container button.selected {
+    background-color: #ffcc80;
+}
+
 #answer-container button {
     width: 100%;
     padding: 16px;
