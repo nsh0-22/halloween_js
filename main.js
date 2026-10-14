@@ -92,6 +92,7 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
+const answers = [];
 
 function changeQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
@@ -103,10 +104,26 @@ function changeQuestion() {
     titleElement.textContent = currentQuestion.title;
 
     answerElementA.textContent = currentQuestion.answers[0];
-
     answerElementB.textContent = currentQuestion.answers[1];
-  
     answerElementC.textContent = currentQuestion.answers[2];
+
+    answerElementA.classList.remove('selected');
+    answerElementB.classList.remove('selected');
+    answerElementC.classList.remove('selected');
+
+    console.log(answers[currentQuestionIndex]);
+
+    if (answers[currentQuestionIndex] === 'A') {
+        answerElementA.classList.add('selected');
+    }
+
+    if (answers[currentQuestionIndex] === 'B') {
+        answerElementB.classList.add('selected');
+    }
+
+    if (answers[currentQuestionIndex] === 'C') {
+        answerElementC.classList.add('selected');
+    }
 
     if (currentQuestionIndex === 0) {
         prevButton.style.visibility = 'hidden';
@@ -145,13 +162,25 @@ prevButton.addEventListener('click', function() {
 });
 
 answerElementA.addEventListener('click', function() {
+    answers[currentQuestionIndex] = 'A';
+    answerElementB.classList.remove('selected');
+    answerElementC.classList.remove('selected');
+
     answerElementA.classList.add('selected');
 });
 
 answerElementB.addEventListener('click', function() {
+    answers[currentQuestionIndex] = 'B';
+    answerElementA.classList.remove('selected');
+    answerElementC.classList.remove('selected');
+
     answerElementB.classList.add('selected');
 });
 
 answerElementC.addEventListener('click', function() {
+    answers[currentQuestionIndex] = 'C';
+    answerElementA.classList.remove('selected');
+    answerElementB.classList.remove('selected');
+
     answerElementC.classList.add('selected');
 });
