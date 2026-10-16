@@ -144,6 +144,14 @@ const questions = [
 let currentQuestionIndex = 0;
 const answers = [];
 
+const scores = {
+    openness: 0,
+    conscientiousness: 0,
+    extraversion: 0,
+    agreeableness: 0,
+    neuroticism: 0
+};
+
 function changeQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -188,6 +196,45 @@ function changeQuestion() {
     }
 }
 
+function calculateScores() {
+    scores.openness = 0;
+    scores.conscientiousness = 0;
+    scores.extraversion = 0;
+    scores.agreeableness = 0;
+    scores.neuroticism = 0;
+
+    for (let i = 0; i < answers.length; i++) {
+        const answerScore = questions[i].scores['ABC'.indexOf(answers[i])];
+        
+        for (const [trait, point] of Object.entries(answerScore)) {
+            scores[trait] += point;
+        }
+    }
+
+    console.log(scores);
+}
+
+function determineCharacter() {
+    const maxScore = Math.max(...Object.values(scores));
+
+    let character;
+
+    if (scores.openness === maxScore) {
+        character = 'dracula';
+    } else if (scores.conscientiousness === maxScore) {
+        character = 'zombie';
+    } else if (scores.extraversion === maxScore) {
+        character = 'jackOLantern';
+    } else if (scores.agreeableness === maxScore) {
+        character = 'witch';
+    } else if (scores.neuroticism === maxScore) {
+        character = 'ghost';
+    }
+    
+    return character;
+}
+
+
 const answerElementA = document.getElementById('answer-a');
 const answerElementB = document.getElementById('answer-b');
 const answerElementC = document.getElementById('answer-c');
@@ -195,9 +242,18 @@ const answerElementC = document.getElementById('answer-c');
 const nextButton = document.getElementById('next-button');
 const prevButton = document.getElementById('prev-button');
 
+const errorMessage = document.getElementById('error-message');
+
 changeQuestion();
 
 nextButton.addEventListener('click', function() {
+    if (answers[currentQuestionIndex] === undefined) {
+        errorMessage.textContent = '回答を選んでね';
+        return;
+    }
+
+    errorMessage.textContent = '';
+
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
         changeQuestion();
@@ -217,6 +273,8 @@ answerElementA.addEventListener('click', function() {
     answerElementC.classList.remove('selected');
 
     answerElementA.classList.add('selected');
+
+    errorMessage.textContent = '';
 });
 
 answerElementB.addEventListener('click', function() {
@@ -225,6 +283,8 @@ answerElementB.addEventListener('click', function() {
     answerElementC.classList.remove('selected');
 
     answerElementB.classList.add('selected');
+
+    errorMessage.textContent = '';
 });
 
 answerElementC.addEventListener('click', function() {
@@ -233,4 +293,6 @@ answerElementC.addEventListener('click', function() {
     answerElementB.classList.remove('selected');
 
     answerElementC.classList.add('selected');
+
+    errorMessage.textContent = '';
 });
