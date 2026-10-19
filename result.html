@@ -13,23 +13,59 @@
         </div>
 
         <div id="result-container">
+            <div class="character-image">
+                <img id="character-image" alt="">
+            </div>
+            
             <h2 id="character-name">ここにキャラクター名が表示される</h2>
+
+            <p id="character-comment">
+                ここに診断コメントが表示される
+            </p>
         </div>
 
         <script>
             const character = sessionStorage.getItem('character');
 
-            const characterNames = {
-                dracula: 'ドラキュラ',
-                zombie: 'ゾンビ',
-                jackOLantern: 'ジャック・オ・ランタン',
-                witch: '魔女',
-                ghost: 'オバケ'
+            const characters = {
+                dracula: {
+                    name: 'ドラキュラ',
+                    image: 'images/dracula.png',
+                    comment: '血を求めて今日も世界中を飛び回る好奇心旺盛なあなた。夜行性だから晴れた日のお出かけは苦手かも？'
+                } ,
+
+                zombie: {
+                    name: 'ゾンビ',
+                    image: 'images/zombie.png',
+                    comment: 'お墓の下で粘り強く待っているあなた。おや、そろそろ出番かな？'
+                } ,
+
+                jackOLantern: {
+                    name: 'ジャック・オ・ランタン',
+                    image: 'images/jack-o-lantern.png',
+                    comment: '楽しいことが大好きなあなた。ハロウィンパーティの盛り上げ役に抜擢されることまちがいなしだね！'
+                } ,
+
+                witch: {
+                    name: '魔女',
+                    image: 'images/witch.png',
+                    comment: '魔法で人の気持ちを具現化できたり、相手が求めていることがわかるあなた。みんなが食べたいのは毒"なし"リンゴだよ！'
+                } ,
+
+                ghost: {
+                    name: 'オバケ',
+                    image: 'images/ghost.png',
+                    comment: '繊細で周囲へのアンテナが高いあなた。賑やかなハロウィンの夜でも安心して過ごせる秘密の場所を知ってるかも？'
+                }
             };
 
             const characterName = document.getElementById('character-name');
+            const characterComment = document.getElementById('character-comment');
+            const characterImage = document.getElementById('character-image');
 
-            characterName.textContent = characterNames[character];
+            characterImage.src = characters[character].image;
+            characterName.textContent = characters[character].name;
+            characterComment.textContent = characters[character].comment;
         </script>
     </body>
 </html>
