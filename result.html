@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>診断結果 | Halloweenタイプ診断</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="result-title">
+            <h1>あなたの診断結果は...</h1>
+        </div>
+
+        <div id="result-container">
+            <h2 id="character-name">ここにキャラクター名が表示される</h2>
+        </div>
+
+        <script>
+            const character = sessionStorage.getItem('character');
+
+            const characterNames = {
+                dracula: 'ドラキュラ',
+                zombie: 'ゾンビ',
+                jackOLantern: 'ジャック・オ・ランタン',
+                witch: '魔女',
+                ghost: 'オバケ'
+            };
+
+            const characterName = document.getElementById('character-name');
+
+            characterName.textContent = characterNames[character];
+        </script>
+    </body>
+</html>

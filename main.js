@@ -191,8 +191,10 @@ function changeQuestion() {
 
     if (currentQuestionIndex === questions.length - 1) {
         nextButton.style.visibility = 'hidden';
+        resultButton.style.display = 'block';
     } else {
         nextButton.style.visibility = 'visible';
+        resultButton.style.display = 'none';
     }
 }
 
@@ -243,6 +245,8 @@ const nextButton = document.getElementById('next-button');
 const prevButton = document.getElementById('prev-button');
 
 const errorMessage = document.getElementById('error-message');
+
+const resultButton = document.getElementById('result-button');
 
 changeQuestion();
 
@@ -295,4 +299,12 @@ answerElementC.addEventListener('click', function() {
     answerElementC.classList.add('selected');
 
     errorMessage.textContent = '';
+});
+
+resultButton.addEventListener('click', function() {
+    calculateScores();
+
+    const character = determineCharacter();
+    sessionStorage.setItem('character', character);
+    window.location.href = 'result.html';
 });
