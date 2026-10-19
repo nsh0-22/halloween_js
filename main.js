@@ -252,7 +252,7 @@ changeQuestion();
 
 nextButton.addEventListener('click', function() {
     if (answers[currentQuestionIndex] === undefined) {
-        errorMessage.textContent = '回答を選んでね';
+        errorMessage.textContent = 'おっと、回答されてないよ👻';
         return;
     }
 

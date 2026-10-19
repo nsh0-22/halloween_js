@@ -11,15 +11,16 @@ body {
     font-size: 18px;
 }
 
-.test-image {
+.top-image {
     width: 50%;
     margin: 0 auto;
 }
 
-.test-image img {
+.top-image img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 24px;
 }
 
 .character-image {
@@ -49,6 +50,30 @@ body {
     color: aliceblue;
 }
 
+.spider-web {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: auto;
+    pointer-events: none;
+}
+
+.quiz-title {
+    color: aliceblue;
+    text-align: center;
+}
+
+#question-number {
+    color: orange;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#question-title {
+    color: aliceblue;
+}
+
 .start-button {
     width: 50%;
     margin: 0 auto;
@@ -58,7 +83,7 @@ body {
 }
 
 .start-button a {
-    font-size: 32px;
+    font-size: 24px;
     font-family: "Hiragino Maru Gothic ProN", sans-serif;
     font-weight: bold;
     padding: 10px 20px;
@@ -76,6 +101,14 @@ body {
 .start-button a:active {
     box-shadow: 0 0 0 #663399;
     transform: translateY(5px);
+}
+
+#error-message {
+    color: #ffb347;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 16px auto;
 }
 
 .selected {
@@ -139,6 +172,46 @@ body {
 #prev-button:active {
     box-shadow: 0 0 0 #663399;
     transform: translateY(4px);
+}
+
+.result-title {
+    text-align: center;
+    color: aliceblue;
+}
+
+#result-container {
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: aliceblue;
+}
+
+.character-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.character-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+}
+
+#character-name {
+    color: aliceblue;
+    font-size: 28px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+#character-comment {
+    color: aliceblue;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0 auto 32px;
 }
 
 
