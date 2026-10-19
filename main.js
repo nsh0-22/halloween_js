@@ -189,13 +189,8 @@ function changeQuestion() {
         prevButton.style.visibility = 'visible';
     }
 
-    if (currentQuestionIndex === questions.length - 1) {
-        nextButton.style.visibility = 'hidden';
-        resultButton.style.display = 'block';
-    } else {
-        nextButton.style.visibility = 'visible';
-        resultButton.style.display = 'none';
-    }
+    nextButton.style.visibility = 'visible';
+    resultButton.style.display = 'none';
 }
 
 function calculateScores() {
@@ -261,6 +256,9 @@ nextButton.addEventListener('click', function() {
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
         changeQuestion();
+    } else {
+        nextButton.style.visibility = 'hidden';
+        resultButton.style.display = 'block';
     }
 });
 
