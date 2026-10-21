@@ -233,6 +233,36 @@ body {
     margin: 0 auto 32px;
 }
 
+.top-button {
+    text-align: center;
+    margin: 40px auto;
+}
+
+#top-button {    
+    padding: 14px 32px;
+    background-color: orange;
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Hiragino Maru Gothic ProN", sans-serif;
+    border: 3px solid #663399;
+    border-radius: 16px;
+    box-shadow: 0 5px 0 #663399;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#top-button:hover {
+    background-color: #ff7518;
+    box-shadow: 0 3px 0 #663399;
+    transform: translateY(2px);
+}
+
+#top-button:active {
+    box-shadow: 0 0 0 #663399;
+    transform: translateY(5px);
+}
+
 
 @media (max-width: 600px) {
     .top-title {
@@ -254,6 +284,10 @@ body {
         font-size: 16px;
     }
     .start-button {
+        width: 90%;
+    }
+
+    .top-button {
         width: 90%;
     }
 

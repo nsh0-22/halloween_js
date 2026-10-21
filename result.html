@@ -24,6 +24,10 @@
             </p>
         </div>
 
+        <div class="top-button">
+            <button id="top-button" type="button">トップに戻る</button>
+        </div>
+
         <script>
             const character = sessionStorage.getItem('character');
 
@@ -62,6 +66,11 @@
             const characterName = document.getElementById('character-name');
             const characterComment = document.getElementById('character-comment');
             const characterImage = document.getElementById('character-image');
+            const topButton = document.getElementById('top-button');
+
+            topButton.addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
 
             characterImage.src = characters[character].image;
             characterName.textContent = characters[character].name;
