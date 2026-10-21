@@ -34,6 +34,7 @@
 
         <script>
             const character = sessionStorage.getItem('character');
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
             const characters = {
                 dracula: {
@@ -95,7 +96,11 @@
                     + '&url=' + encodeURIComponent(url)
                     + '&hashtags=' + encodeURIComponent(hashtag);
 
-                window.location.href = shareUrl;
+                if (isIOS) {
+                    window.location.href = shareUrl;
+                } else {
+                    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+                }
             });
 
             characterImage.src = characters[character].image;
