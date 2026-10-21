@@ -28,6 +28,10 @@
             <button id="top-button" type="button">トップに戻る</button>
         </div>
 
+        <div class="share-button">
+            <button id="share-button" type="button">Xでシェアする</button>
+        </div>
+
         <script>
             const character = sessionStorage.getItem('character');
 
@@ -63,13 +67,35 @@
                 }
             };
 
+            const shareMessages = {
+                dracula: 'ハロウィン診断の結果は「ドラキュラ」でした！',
+                zombie: 'ハロウィン診断の結果は「ゾンビ」でした！',
+                jackOLantern: 'ハロウィン診断の結果は「ジャック・オ・ランタン」でした！',
+                witch: 'ハロウィン診断の結果は「魔女」でした！',
+                ghost: 'ハロウィン診断の結果は「オバケ」でした！'
+            };
+
             const characterName = document.getElementById('character-name');
             const characterComment = document.getElementById('character-comment');
             const characterImage = document.getElementById('character-image');
             const topButton = document.getElementById('top-button');
+            const shareButton = document.getElementById('share-button');
 
             topButton.addEventListener('click', function() {
                 window.location.href = 'index.html';
+            });
+
+            shareButton.addEventListener('click', function() {
+                const message = shareMessages[character];
+                const url = 'https://nsh0-22.github.io/halloween_js/';
+                const hashtag = 'ハロウィン診断';
+
+                const shareUrl = 'https://x.com/intent/tweet?text='
+                    + encodeURIComponent(message)
+                    + '&url=' + encodeURIComponent(url)
+                    + '&hashtags=' + encodeURIComponent(hashtag);
+
+                window.open(shareUrl, '_blank', 'noopener,noreferrer');
             });
 
             characterImage.src = characters[character].image;

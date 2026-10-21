@@ -263,6 +263,25 @@ body {
     transform: translateY(5px);
 }
 
+.share-button {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#share-button {    
+    padding: 10px 24px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Hiragino Maru Gothic ProN", sans-serif;
+    border: 3px solid white;
+    border-radius: 16px;
+    box-shadow: 0 3px 0 white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
 
 @media (max-width: 600px) {
     .top-title {
