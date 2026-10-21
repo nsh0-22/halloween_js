@@ -95,7 +95,7 @@
                     + '&url=' + encodeURIComponent(url)
                     + '&hashtags=' + encodeURIComponent(hashtag);
 
-                window.open(shareUrl, '_blank', 'noopener,noreferrer');
+                window.location.href = shareUrl;
             });
 
             characterImage.src = characters[character].image;
