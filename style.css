@@ -260,4 +260,18 @@ body {
     .start-button button {
         font-size: 16px;
     }
+
+    #question-title {
+        font-size: 18px;
+        line-height: 1.6;
+        min-height: 5.6em;
+    }
+
+    #answer-container {
+        min-height: 300px;
+    }
+
+    #answer-container button {
+        min-height: 80px;
+    }
 }
