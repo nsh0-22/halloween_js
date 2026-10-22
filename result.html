@@ -91,13 +91,13 @@
                 const url = 'https://nsh0-22.github.io/halloween_js/?v=2';
                 const hashtag = 'ハロウィン診断';
 
-                const shareUrl = 'https://x.com/intent/post?text='
+                const shareUrl = 'https://x.com/intent/tweet?text='
                     + encodeURIComponent(message)
                     + '&url=' + encodeURIComponent(url)
                     + '&hashtags=' + encodeURIComponent(hashtag);
 
                 if (isIOS) {
-                    window.location.href = shareUrl;
+                    window.open(shareUrl, '_blank');
                 } else {
                     window.open(shareUrl, '_blank', 'noopener,noreferrer');
                 }
