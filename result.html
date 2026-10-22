@@ -97,7 +97,7 @@
                     + '&hashtags=' + encodeURIComponent(hashtag);
 
                 if (isIOS) {
-                    window.open(shareUrl, '_blank');
+                    window.location.href = shareUrl;
                 } else {
                     window.open(shareUrl, '_blank', 'noopener,noreferrer');
                 }
