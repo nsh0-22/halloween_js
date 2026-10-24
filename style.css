@@ -282,6 +282,48 @@ body {
     transition: 0.2s;
 }
 
+.progress-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.progress-track {
+    position: relative;
+    width: 100%;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 10px;
+    background-image: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent calc(10% - 1px),
+        #800080 calc(10% - 1px),
+        #800080 10%
+    );
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #ffcc80;
+    border-radius: 10px;
+}
+
+.progress-spider {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.progress-spider img {
+    display: block;
+    width: 40px;
+    height: auto;
+}
+
 
 @media (max-width: 600px) {
     .top-title {

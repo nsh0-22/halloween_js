@@ -191,6 +191,8 @@ function changeQuestion() {
 
     nextButton.style.visibility = 'visible';
     resultButton.style.display = 'none';
+
+    updateProgress();
 }
 
 function calculateScores() {
@@ -243,6 +245,16 @@ const errorMessage = document.getElementById('error-message');
 
 const resultButton = document.getElementById('result-button');
 
+const progressFill = document.querySelector('.progress-fill');
+const progressSpider = document.querySelector('.progress-spider');
+
+function updateProgress() {
+    const progress = currentQuestionIndex / questions.length * 100;
+
+    progressFill.style.width = `${progress}%`;
+    progressSpider.style.left = `${progress}%`;
+}
+
 changeQuestion();
 
 nextButton.addEventListener('click', function() {
@@ -259,6 +271,9 @@ nextButton.addEventListener('click', function() {
     } else {
         nextButton.style.visibility = 'hidden';
         resultButton.style.display = 'block';
+
+        progressFill.style.width = '100%';
+        progressSpider.style.left = '100%';
     }
 });
 
