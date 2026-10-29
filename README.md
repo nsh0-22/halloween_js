@@ -30,4 +30,5 @@ Xで診断結果をシェアできます。
 https://nsh0-22.github.io/halloween_js/
 
 ## アウトプット
-* https://qiita.com/Nsh0/items/8bdaed47ccf7c8cfb6ab
+* JavaScriptで制作した診断アプリを振り返る
+https://qiita.com/Nsh0/items/8bdaed47ccf7c8cfb6ab
